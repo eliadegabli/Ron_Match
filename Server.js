@@ -8,7 +8,7 @@ const mysql = require("mysql");
 //const upload = require('file-upload/multer');
 const router = express.Router();
 
-const port  = process.env.PORT || 5000;
+const port  =  5000;
 //const singleUpload = upload.single('image')
 
 const db = mysql.createPool({
@@ -32,7 +32,8 @@ if(process.env.NODE_ENV === "production"){
     app.get("/api/get", (req,res) =>{
         const sqlSelect = "Select * From users;"
         db.query(sqlSelect, (err,result) =>{
-            res.send(result);     
+            res.send(result);  
+            console.log("ddd = " + err)   
             console.log("ddd = " + process.env.REACT_APP_API_URL)
         });
     });
