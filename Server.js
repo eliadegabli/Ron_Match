@@ -23,6 +23,7 @@ app.use(cors());
 app.use(express.json());
 
 if(process.env.NODE_ENV === "production"){
+    console.log("check= " + process.env.REACT_APP_USER_AWS_SQL)
     app.use(express.static('build'));
     app.get('/', (req,res) => {
         req.sendFile(path.join(__dirname+'/index.html'));
