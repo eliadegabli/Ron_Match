@@ -8,7 +8,7 @@ const mysql = require("mysql");
 //const upload = require('file-upload/multer');
 const router = express.Router();
 
-const port  =  5000;
+const port  =  process.env.NODE_ENV || 5000;
 //const singleUpload = upload.single('image')
 
 const db = mysql.createPool({
