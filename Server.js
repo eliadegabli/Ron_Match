@@ -11,10 +11,10 @@ const port  = process.env.PORT || 5000;
 //const singleUpload = upload.single('image')
 
 const db = mysql.createPool({
-    host: env.HOST_AWS_SQL,
-    user: env.USER_AWS_SQL,
-    password: env.PASSWORD_AWS_SQL,
-    database: env.DATABASE_AWS_SQL,
+    host: process.env.REACT_APP_HOST_AWS_SQL,
+    user: process.env.REACT_APP_USER_AWS_SQL,
+    password: process.env.REACT_APP_PASSWORD_AWS_SQL,
+    database: process.env.REACT_APP_DATABASE_AWS_SQL,
     PORT: 3306
 });
 
