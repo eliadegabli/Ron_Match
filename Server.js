@@ -32,9 +32,9 @@ if(process.env.NODE_ENV === "production"){
     app.get("/api/get", (req,res) =>{
         const sqlSelect = "Select * From users;"
         db.query(sqlSelect, (err,result) =>{
-            res.send(result);     
+            res.send(result);  
+            console.log("ddd = " + result)   
         });
-        console.log("ddd = " + result)
     });
     
     app.put("/api/getDetails", (req,res) =>{
