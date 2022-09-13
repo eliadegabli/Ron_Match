@@ -19,18 +19,6 @@ const db = mysql.createPool({
     PORT: 3306
 });
 
-db.getConnection(function(err, connection) {
-    connection.query( 'SELECT * FROM users', function(err, rows) {
-
-      console.log(db._freeConnections.indexOf(connection)); // -1
-
-      connection.release();
-
-      console.log(db._freeConnections.indexOf(connection)); // 0
-
-   });
-});
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(express.json());
@@ -46,7 +34,7 @@ if(process.env.NODE_ENV === "production"){
         db.query(sqlSelect, (err,result) =>{
             res.send(result);     
         });
-        console.log("ddd = " + process.env.REACT_APP_USER_AWS_SQL)
+        console.log("ddd = " + result)
     });
     
     app.put("/api/getDetails", (req,res) =>{
