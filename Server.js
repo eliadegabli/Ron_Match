@@ -30,11 +30,12 @@ if(process.env.NODE_ENV === "production"){
     })
 
     app.get("/api/get", (req,res) =>{
-        const sqlSelect = "Select * From users;"
+        /*const sqlSelect = "Select * From users;"
         db.query(sqlSelect, (err,result) =>{
             res.send(result);     
             console.log("ddd = " + process.env.REACT_APP_API_URL)
-        });
+        });*/
+        console.log("ddd = " + process.env.REACT_APP_USER_AWS_SQL)
     });
     
     app.put("/api/getDetails", (req,res) =>{
