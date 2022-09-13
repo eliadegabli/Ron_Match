@@ -123,7 +123,7 @@ export default function UserCard() {
     Axios.post("https://ronmatch.herokuapp.com/api/delete", {
       UserID:userID
     }).then(()=> {
-        setUsersList(UsersList.filter(item => item.User_ID !== userID));
+        setUsersList((UsersList) => UsersList.filter(item => item.User_ID !== userID));
     })
   };
 

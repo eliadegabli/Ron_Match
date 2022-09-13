@@ -19,6 +19,18 @@ const db = mysql.createPool({
     PORT: 3306
 });
 
+db.getConnection(function(err, connection) {
+    connection.query( 'SELECT * FROM users', function(err, rows) {
+
+      console.log(db._freeConnections.indexOf(connection)); // -1
+
+      connection.release();
+
+      console.log(db._freeConnections.indexOf(connection)); // 0
+
+   });
+});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.use(express.json());
