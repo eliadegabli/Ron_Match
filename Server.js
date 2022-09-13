@@ -34,6 +34,7 @@ if(process.env.NODE_ENV === "production"){
         db.query(sqlSelect, (err,result) =>{
             res.send(result);  
             console.log("ddd = " + result)   
+            console.log("err = " + err) 
         });
     });
     
