@@ -134,7 +134,7 @@ export default function UserCard() {
         <Toolbar>
           <JoinInnerIcon sx={{ mr: 2 }} />
           <Typography variant="h6" color="aliceblue" noWrap>
-            RonMatch
+            RonMatch 2
           </Typography>
         </Toolbar>
       </AppBar>
