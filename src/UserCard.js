@@ -56,7 +56,7 @@ export default function UserCard() {
   const [UsersListDetails,setUsersListDetails] = useState([]);
 
   useEffect(()=>{
-    Axios.get("https://ronmatch.herokuapp.com/api/get").then((response) => {
+    Axios.get("https://main.dpn7svtvyhvc8.amplifyapp.com/api/get").then((response) => {
       setUsersList(response.data);
       console.log(response.data);
     })    
@@ -64,7 +64,7 @@ export default function UserCard() {
 
   const submitUser = (e) => {
     e.preventDefault();
-    Axios.post("https://ronmatch.herokuapp.com/api/insert", {
+    Axios.post("https://main.dpn7svtvyhvc8.amplifyapp.com/api/insert", {
       Email:Email,
       Phone:Phone,
       FirstName:FirstName,
@@ -87,7 +87,7 @@ export default function UserCard() {
   };
 
   const updateUser = (userID,email,phone,firsName,lastName,birthDate,age,service,goals,hobbies,characters,employment,education,bClose) => {
-    Axios.put("https://ronmatch.herokuapp.com/api/update", {
+    Axios.put("https://main.dpn7svtvyhvc8.amplifyapp.com/api/update", {
       UserID:userID,
       Email:email,
       Phone:phone,
@@ -100,7 +100,7 @@ export default function UserCard() {
       bClose();
     }); 
 
-    Axios.post("https://ronmatch.herokuapp.com/api/upsertDetails", {
+    Axios.post("https://main.dpn7svtvyhvc8.amplifyapp.com/api/upsertDetails", {
       UserID:userID,
       Service:service,
       Goals:goals,
@@ -120,7 +120,7 @@ export default function UserCard() {
 
   const deleteUser = (userID,bClose) => {
 
-    Axios.post("https://ronmatch.herokuapp.com/api/delete", {
+    Axios.post("https://main.dpn7svtvyhvc8.amplifyapp.com/api/delete", {
       UserID:userID
     }).then(()=> {
         setUsersList((UsersList) => UsersList.filter(item => item.User_ID !== userID));
