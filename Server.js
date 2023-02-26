@@ -123,7 +123,7 @@ if(process.env.NODE_ENV === "production"){
 
 app.listen(process.env.PORT || 5000, (err)=>{
     if(err) return  console.log(err);
-    console.log('server runing on port:', port);
+    console.log('server runing on port:', port); 
 })
 
 /*module.exports = router;*/
