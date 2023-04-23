@@ -56,7 +56,7 @@ export default function UserCard() {
   const [UsersListDetails,setUsersListDetails] = useState([]);
 
   useEffect(()=>{
-    Axios.get("https://main.dpn7svtvyhvc8.amplifyapp.com/api/get").then((response) => {
+    Axios.get("https://http://node-env.eba-fmvksybr.us-east-1.elasticbeanstalk.com").then((response) => {
       setUsersList(response.data);
       console.log(response.data);
     })    
